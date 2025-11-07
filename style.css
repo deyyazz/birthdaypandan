@@ -1,77 +1,79 @@
-﻿/* Styling untuk seluruh halaman */
+﻿/* --- TEMA VINTAGE / RETRO --- */
+
+/* Import font klasik/serif dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400&display=swap');
+
 body {
-    background-color: #f0f0f5; /* Warna latar belakang sangat terang */
-    font-family: 'Georgia', serif; /* Jenis huruf klasik */
-    color: #4B0082; /* Warna teks ungu gelap (Indigo) */
+    background-color: #f8f0e3; /* Warna krem/beige lembut */
+    font-family: 'Merriweather', serif; /* Font teks yang mudah dibaca */
+    color: #402f23; /* Warna teks coklat gelap */
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Mengatur item dari atas ke bawah */
+    justify-content: flex-start; /* Konten dimulai dari atas */
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 20px 0;
 }
 
 /* Kotak Kontainer utama */
 .container {
     background-color: #ffffff;
-    border: 5px solid #A020F0; /* Bingkai warna ungu */
-    border-radius: 15px;
-    padding: 30px 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 3px solid #b8a087; /* Bingkai warna coklat tua */
+    border-radius: 8px;
+    padding: 40px 50px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
+    margin-top: 20px;
 }
 
 /* Judul Utama */
 h1 {
-    color: #8A2BE2; /* Warna ungu kebiruan */
-    font-size: 2.5em;
-    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif; /* Font elegan untuk judul */
+    color: #7d4f3b; /* Warna coklat kemerahan */
+    font-size: 3em;
+    margin-bottom: 5px;
 }
 
 /* Judul Nama Pacar */
 h2 {
-    color: #DA70D6; /* Warna ungu anggrek */
+    font-family: 'Playfair Display', serif;
+    color: #a37b58;
     font-style: italic;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+    font-weight: 400;
 }
 
-/* Styling Gambar */
-#foto-ayang {
-    width: 100%; /* Lebar gambar memenuhi kontainer */
-    max-width: 300px;
-    height: auto;
-    border-radius: 50%; /* Membuat gambar menjadi bulat */
-    border: 5px solid #FFC0CB; /* Bingkai merah muda yang manis */
-    object-fit: cover;
+p {
+    line-height: 1.6;
     margin-bottom: 25px;
 }
+/* ... hapus kode cake-fall dari CSS sebelumnya ... */
+/* Styling Kue Tumpuk 3 */
+.cake-icon {
+    font-size: 5em;
+    margin: 20px 0 0 0;
+    line-height: 1;
+}
 
-/* Tombol Rahasia */
-#tombol-rahasia {
-    background-color: #A020F0; /* Ungu terang */
+/* Styling Tombol Umum */
+button {
+    background-color: #a37b58; /* Warna vintage/earthy */
     color: white;
     border: none;
     padding: 12px 25px;
     font-size: 1em;
-    border-radius: 25px;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s;
+    margin: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-family: 'Merriweather', serif;
 }
 
-    #tombol-rahasia:hover {
-        background-color: #8A2BE2; /* Warna ungu sedikit lebih gelap saat disentuh */
+    button:hover {
+        background-color: #7d4f3b; /* Warna lebih gelap saat disentuh */
+        transform: translateY(-2px);
     }
-
-/* Pesan yang Awalnya Tersembunyi */
-.tersembunyi {
-    display: none; /* Menyembunyikan elemen secara default */
-    font-weight: bold;
-    color: #DC143C; /* Warna merah crimson */
-    margin-top: 20px;
-    padding: 15px;
-    border: 2px dashed #FFC0CB;
-}

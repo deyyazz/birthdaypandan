@@ -1,26 +1,43 @@
-﻿// Menunggu sampai seluruh halaman (HTML) selesai dimuat
-document.addEventListener('DOMContentLoaded', function () {
+﻿document.addEventListener('DOMContentLoaded', function () {
 
-    // 1. Ambil elemen tombol dari HTML menggunakan ID-nya
-    const tombol = document.getElementById('tombol-rahasia');
+    // --- 1. LOGIKA PESAN RAHASIA ---
 
-    // 2. Ambil elemen pesan tersembunyi
+    // Tombol 1: Buka Pesan Rahasia (ID lama: tombol-rahasia diganti tombol-pesan)
+    const tombolPesan = document.getElementById('tombol-pesan');
     const pesan = document.getElementById('pesan-tersembunyi');
 
-    // 3. Tambahkan "pendengar" (listener) pada tombol.
-    // Ketika tombol di-klik, fungsi di dalamnya akan dijalankan.
-    tombol.addEventListener('click', function () {
-
-        // Periksa apakah pesan saat ini tersembunyi
-        if (pesan.classList.contains('tersembunyi')) {
-            // Jika tersembunyi, hapus class 'tersembunyi' agar pesan muncul
+    tombolPesan.addEventListener('click', function () {
+        if (pesan.classList.contains('tersembhuni')) {
             pesan.classList.remove('tersembunyi');
-            // Ganti teks tombol
-            tombol.textContent = 'Pesan Sudah Muncul!';
+            tombolPesan.textContent = 'Pesan Sudah Muncul!';
         } else {
-            // Jika sudah muncul, sembunyikan lagi (opsional)
             pesan.classList.add('tersembunyi');
-            tombol.textContent = 'Klik Untuk Pesan Tambahan';
+            tombolPesan.textContent = 'Buka Pesan Spesial 💌';
         }
     });
+
+    // --- 2. LOGIKA GALERI KADO MODAL ---
+
+    // Tombol 2: Buka Kado (untuk Galeri)
+    const tombolKado = document.getElementById('tombol-kado'); // ID Baru
+    const modalGaleri = document.getElementById('modal-galeri');
+    const tombolTutup = document.getElementsByClassName('close-button')[0];
+
+    // Buka Modal ketika tombol Kado diklik
+    tombolKado.addEventListener('click', function () {
+        modalGaleri.style.display = 'block';
+    });
+
+    // Tutup Modal ketika tombol (x) diklik
+    tombolTutup.addEventListener('click', function () {
+        modalGaleri.style.display = 'none';
+    });
+
+    // Tutup Modal ketika area luar modal diklik
+    window.addEventListener('click', function (event) {
+        if (event.target == modalGaleri) {
+            modalGaleri.style.display = 'none';
+        }
+    });
+
 });
